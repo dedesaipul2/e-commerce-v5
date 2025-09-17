@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akun Saya - Shoppulz</title>
+  <link rel="stylesheet" href="style.css">
+  <style>/* Reset */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f6f7;
+  color: #333;
+  line-height: 1.5;
+}
+/* ================= HEADER ================= */
+.app-header {
+  background: #a8d5ba; /* hijau soft */
+  color: #fff;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+
+  /* Shadow tipis elegan */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.app-header .title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.app-header .logout {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.logout-icon {
+  font-size: 24px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.logout-icon:hover {
+  background: rgba(255,255,255,0.15);
+  transform: scale(1.1);
+}
+/* ================= PROFIL CARD ================= */
+.profile-card {
+  background: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 420px;
+
+  /* Border & Shadow */
+  border: 1px solid rgba(168, 213, 186, 0.4);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-top img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #a8d5ba;
+}
+.profile-info h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.profile-info p {
+  font-size: 14px;
+  margin: 2px 0;
+  color: #666;
+}
+
+.profile-info p:first-of-type {
+  font-size: 13px;
+  color: #888; /* Email lebih soft */
+}
+
+.profile-info p:last-of-type {
+  font-weight: 600;
+  color: #a88b32; /* Gold warna elegan */
+  background: rgba(168, 213, 186, 0.2);
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 8px;
+  margin-top: 6px;
+}
+
+.profile-status {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding: 10px;
+  background: #f1f8f4;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.profile-status div {
+  text-align: center;
+  flex: 1;
+}
+
+.profile-status div:not(:last-child) {
+  border-right: 1px solid #e0e0e0;
+}
+/* ================= MENU GRID ================= */
+.menu-grid {
+  margin: 20px auto;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+
+  /* Border + Shadow lebih jelas */
+  border: 1px solid rgba(168, 213, 186, 0.5);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item {
+  background: #f1f8f4;
+  padding: 16px;
+  border-radius: 14px;
+  text-align: center;
+  cursor: pointer;
+
+  /* Shadow kecil biar ada depth */
+  border: 1px solid rgba(168, 213, 186, 0.4);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+
+  transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+  background: #a8d5ba;
+  color: #fff;
+  transform: translateY(-5px);
+  border: 1px solid rgba(168, 213, 186, 0.7);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+.menu-item span {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.menu-item p {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ================= LOGOUT BUTTON ================= */
+.logout-section {
+  margin: 25px auto;
+  max-width: 420px;
+  text-align: center;
+}
+
+.logout-section button {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+
+  /* Shadow */
+  box-shadow: 0 4px 12px rgba(220,53,69,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.logout-section button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(220,53,69,0.4);
+}
+/* Bagian Pesanan */
+.order-section {
+  background: #fff;
+  margin: 20px auto;
+  padding: 16px;
+  border-radius: 16px;
+  max-width: 420px;
+  border: 1px solid rgba(168, 213, 186, 0.4);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.order-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #333;
+}
+
+.order-icons {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.order-item {
+  flex: 1;
+}
+
+.icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f1f8f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 6px;
+  font-size: 22px;
+  color: #4CAF50;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.icon-circle:hover {
+  transform: scale(1.1);
+  background: #a8d5ba;
+  color: #fff;
+}
+
+.order-item p {
+  font-size: 13px;
+  color: #555;
+}
+  </style>
+</head>
+<body>
+
+  <div class="app-header">
+    <div class="title">Profil</div>
+    <div class="logout">
+      <ion-icon class="logout-icon" name="log-out-outline"></ion-icon>
+    </div>
+  </div>
+
+
+  <!-- Profil User -->
+  <div class="profile-card">
+    <div class="profile-top">
+      <img src="profil.jpg" alt="User Profile">
+      <div class="profile-info">
+        <h2>Dede Saipul</h2>
+        <p>Email: dede@example.com</p>
+        <p>Member: Gold ⭐</p>
+      </div>
+    </div>
+    <div class="profile-status">
+      <div>
+        <strong>Rp 250.000</strong>
+        <p>Saldo</p>
+      </div>
+      <div>
+        <strong>120</strong>
+        <p>Poin</p>
+      </div>
+      <div>
+        <strong>3</strong>
+        <p>Voucher</p>
+      </div>
+    </div>
+  </div>
+<!-- Bagian Pesanan Saya -->
+<div class="order-section">
+  <h3>Pesanan Saya</h3>
+  <div class="order-icons">
+    <div class="order-item">
+      <div class="icon-circle">
+        <ion-icon name="card-outline"></ion-icon>
+      </div>
+      <p>Belum Bayar</p>
+    </div>
+    <div class="order-item">
+      <div class="icon-circle">
+        <ion-icon name="cube-outline"></ion-icon>
+      </div>
+      <p>Dikemas</p>
+    </div>
+    <div class="order-item">
+      <div class="icon-circle">
+        <ion-icon name="car-outline"></ion-icon>
+      </div>
+      <p>Dikirim</p>
+    </div>
+    <div class="order-item">
+      <div class="icon-circle">
+        <ion-icon name="star-outline"></ion-icon>
+      </div>
+      <p>Ulasan</p>
+    </div>
+    <div class="order-item">
+      <div class="icon-circle">
+        <ion-icon name="refresh-outline"></ion-icon>
+      </div>
+      <p>Retur</p>
+    </div>
+  </div>
+</div>
+  <!-- Menu -->
+  <div class="menu-grid">
+    <div class="menu-item" onclick="alert('Pesanan Saya')">
+      <span>📦</span>
+      <p>Pesanan</p>
+    </div>
+    <div class="menu-item" onclick="alert('Alamat Pengiriman')">
+      <span>🏠</span>
+      <p>Alamat</p>
+    </div>
+    <div class="menu-item" onclick="alert('Voucher Saya')">
+      <span>🎟</span>
+      <p>Voucher</p>
+    </div>
+    <div class="menu-item" onclick="alert('Metode Pembayaran')">
+      <span>💳</span>
+      <p>Pembayaran</p>
+    </div>
+    <div class="menu-item" onclick="alert('Pengaturan Akun')">
+      <span>⚙️</span>
+      <p>Pengaturan</p>
+    </div>
+    <div class="menu-item" onclick="alert('Bantuan')">
+      <span>❓</span>
+      <p>Bantuan</p>
+    </div>
+  </div>
+
+
+  
+  <div>
+   
+  <nav class="navbar-icons">
+  <a href="index.html">
+    <ion-icon name="home-outline"></ion-icon>
+  </a>
+  <a href="#" >
+    <ion-icon name="gift-outline"></ion-icon>
+  </a>
+  <a href="#">
+    <ion-icon name="cart-outline"></ion-icon>
+  </a>
+  <a href="profil.html" class="active">
+    <ion-icon name="person-outline"></ion-icon>
+  </a>
+</nav>
+  </div>
+
+  <script>
+    function logout() {
+      if(confirm("Apakah Anda yakin ingin keluar?")) {
+        alert("Anda sudah keluar dari akun.");
+        window.location.href = "#"; // arahkan ke halaman login
+      }
+    }
+  </script>
+ 
+<!-- Ionicons -->
+<script type="module" src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

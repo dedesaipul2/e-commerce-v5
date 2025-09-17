@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shoppulz</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif;}
+
+    body {
+      background: #ffffff;
+      color: #333;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 22px;
+      color: #2c3e50;
+      font-weight: 600;
+    }
+
+    .search-container {
+      position: relative;
+    }
+
+    .search-icon {
+      cursor: pointer;
+      font-size: 20px;
+      color: #2c3e50;
+      padding: 8px;
+      border-radius: 50%;
+      background: #f1f1f1;
+    }
+
+    .search-input {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      width: 220px;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .category {
+      margin-bottom: 25px;
+    }
+
+    .category h2 {
+      font-size: 16px;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      border-left: 4px solid #27ae60;
+      padding-left: 8px;
+      font-weight: 600;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: #f9f9f9;
+      border-radius: 12px;
+      text-align: center;
+      padding: 15px 10px;
+      transition: 0.2s;
+      cursor: pointer;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .card:hover {
+      background: #e8f5e9;
+      transform: translateY(-3px);
+    }
+
+    .card i {
+      font-size: 20px;
+      color: #27ae60;
+      margin-bottom: 5px;
+    }
+
+    .card p {
+      font-size: 12px;
+      color: #333;
+      margin-top: 5px;
+    }
+
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Shoppulz</h1>
+    <div class="search-container">
+      <i class="fa fa-search search-icon" onclick="toggleSearch()"></i>
+      <input type="text" class="search-input" placeholder="Cari fitur..." onkeyup="searchCards()">
+    </div>
+  </header>
+
+  <!-- Kategori Top Up -->
+  <div class="category">
+    <h2>Top Up</h2>
+    <div class="grid">
+      <div class="card"><i class="fa fa-mobile-alt"></i><p>Isi Pulsa</p></div>
+      <div class="card"><i class="fa fa-globe"></i><p>Paket Data</p></div>
+      <div class="card"><i class="fa fa-gamepad"></i><p>Game</p></div>
+      <div class="card"><i class="fa fa-gift"></i><p>Voucher</p></div>
+      <div class="card"><i class="fa fa-fire"></i><p>Hot Deals</p></div>
+      <div class="card"><i class="fa fa-credit-card"></i><p>E-Money</p></div>
+      <div class="card"><i class="fa fa-wallet"></i><p>E-Wallet</p></div>
+      <div class="card"><i class="fa fa-plane"></i><p>Roaming</p></div>
+    </div>
+  </div>
+
+  <!-- Kategori Pembayaran -->
+  <div class="category">
+    <h2>Pembayaran</h2>
+    <div class="grid">
+      <div class="card"><i class="fa fa-bolt"></i><p>Listrik</p></div>
+      <div class="card"><i class="fa fa-tint"></i><p>PDAM</p></div>
+      <div class="card"><i class="fa fa-tv"></i><p>TV Kabel</p></div>
+      <div class="card"><i class="fa fa-phone"></i><p>Telepon</p></div>
+      <div class="card"><i class="fa fa-building"></i><p>Internet</p></div>
+      <div class="card"><i class="fa fa-graduation-cap"></i><p>Pendidikan</p></div>
+      <div class="card"><i class="fa fa-umbrella"></i><p>Asuransi</p></div>
+      <div class="card"><i class="fa fa-money-bill"></i><p>Pajak</p></div>
+    </div>
+  </div>
+
+  <!-- Kategori Hiburan -->
+  <div class="category">
+    <h2>Hiburan</h2>
+    <div class="grid">
+      <div class="card"><i class="fa fa-music"></i><p>Musik</p></div>
+      <div class="card"><i class="fa fa-film"></i><p>Film</p></div>
+      <div class="card"><i class="fa fa-gamepad"></i><p>Game Premium</p></div>
+      <div class="card"><i class="fa fa-star"></i><p>VIP Akses</p></div>
+      <div class="card"><i class="fa fa-book"></i><p>E-Book</p></div>
+      <div class="card"><i class="fa fa-headphones"></i><p>Podcast</p></div>
+      <div class="card"><i class="fa fa-tv"></i><p>Streaming</p></div>
+      <div class="card"><i class="fa fa-trophy"></i><p>Kompetisi</p></div>
+    </div>
+  </div>
+
+  <!-- Kategori Lainnya -->
+  <div class="category">
+    <h2>Lainnya</h2>
+    <div class="grid">
+      <div class="card"><i class="fa fa-shopping-cart"></i><p>Belanja</p></div>
+      <div class="card"><i class="fa fa-comments"></i><p>Chat</p></div>
+      <div class="card"><i class="fa fa-car"></i><p>Transport</p></div>
+      <div class="card"><i class="fa fa-user-friends"></i><p>Referral</p></div>
+      <div class="card"><i class="fa fa-calendar"></i><p>Event</p></div>
+      <div class="card"><i class="fa fa-chart-line"></i><p>Statistik</p></div>
+      <div class="card"><i class="fa fa-cogs"></i><p>Pengaturan</p></div>
+      <div class="card"><i class="fa fa-question-circle"></i><p>Bantuan</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSearch() {
+      const input = document.querySelector('.search-input');
+      input.style.display = input.style.display === 'block' ? 'none' : 'block';
+      input.focus();
+    }
+
+    function searchCards() {
+      const query = document.querySelector('.search-input').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(query) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
