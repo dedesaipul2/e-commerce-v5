@@ -5,113 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shoppulz</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif;}
-
-    body {
-      background: #ffffff;
-      color: #333;
-      padding: 20px;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    header h1 {
-      font-size: 22px;
-      color: #2c3e50;
-      font-weight: 600;
-    }
-
-    .search-container {
-      position: relative;
-    }
-
-    .search-icon {
-      cursor: pointer;
-      font-size: 20px;
-      color: #2c3e50;
-      padding: 8px;
-      border-radius: 50%;
-      background: #f1f1f1;
-    }
-
-    .search-input {
-      display: none;
-      position: absolute;
-      top: 40px;
-      right: 0;
-      width: 220px;
-      padding: 8px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      outline: none;
-      background: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .category {
-      margin-bottom: 25px;
-    }
-
-    .category h2 {
-      font-size: 16px;
-      color: #2c3e50;
-      margin-bottom: 10px;
-      border-left: 4px solid #27ae60;
-      padding-left: 8px;
-      font-weight: 600;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-      gap: 15px;
-    }
-
-    .card {
-      background: #f9f9f9;
-      border-radius: 12px;
-      text-align: center;
-      padding: 15px 10px;
-      transition: 0.2s;
-      cursor: pointer;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-    }
-
-    .card:hover {
-      background: #e8f5e9;
-      transform: translateY(-3px);
-    }
-
-    .card i {
-      font-size: 20px;
-      color: #27ae60;
-      margin-bottom: 5px;
-    }
-
-    .card p {
-      font-size: 12px;
-      color: #333;
-      margin-top: 5px;
-    }
-
-    @media (min-width: 768px) {
-      .grid {
-        grid-template-columns: repeat(5, 1fr);
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .grid {
-        grid-template-columns: repeat(6, 1fr);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -182,21 +76,6 @@
     </div>
   </div>
 
-  <script>
-    function toggleSearch() {
-      const input = document.querySelector('.search-input');
-      input.style.display = input.style.display === 'block' ? 'none' : 'block';
-      input.focus();
-    }
-
-    function searchCards() {
-      const query = document.querySelector('.search-input').value.toLowerCase();
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card => {
-        const text = card.innerText.toLowerCase();
-        card.style.display = text.includes(query) ? 'block' : 'none';
-      });
-    }
-  </script>
+  <script src="script.js" type="text/javascript"></script>
 </body>
 </html>

@@ -125,11 +125,6 @@ function autoScroll() {
 // Memulai auto-scroll setiap 10ms
 setInterval(autoScroll, 10);
 
-// Optional: Membuat scroll berhenti saat pengguna mengarahkan kursor ke navbar
-navbar.addEventListener('mouseenter', () => {
-  clearInterval(autoScroll);
-});
-
 // Menjalankan auto-scroll kembali ketika pengguna meninggalkan navbar
 navbar.addEventListener('mouseleave', () => {
   setInterval(autoScroll, 10);
@@ -223,7 +218,7 @@ dataItems.product.forEach((items, index) => {
  const priceProduct = cloneCardsProduct.querySelector('.price');
  
  cloneCardsProduct.style.display = 'block';
- imageProduct.src =`assets/pro${index + 1}.jpg`;
+ imageProduct.src =`assets/product/pro${index + 1}.jpg`;
  titleProduct.textContent = items.description;
  priceProduct.textContent = '$' + items.price;
 })
@@ -233,7 +228,7 @@ const buttonChart = document.querySelector("#chart-button")
 function handleForward (e) {
   const linkForward = e.getAttribute("data-forward")
   
-  window.location.href = linkForward + ".html"
+  window.location.href = "/pages/sub-pages/"+ linkForward + "/" + linkForward + ".html"
 }
 
 function updateTime() {

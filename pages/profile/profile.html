@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akun Saya - Shoppulz</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="app-header">
+    <div class="title">Profil</div>
+    <div class="logout">
+      <ion-icon class="logout-icon" name="log-out-outline"></ion-icon>
+    </div>
+  </div>
+  <!-- Profil User -->
+  <div class="profile-card">
+    <div class="profile-top">
+      <img src="/assets/user/profil.jpg" alt="User Profile">
+      <div class="profile-info">
+        <h2>Dede Saipul</h2>
+        <p>Email: dede@example.com</p>
+        <p>Member: Gold ⭐</p>
+      </div>
+    </div>
+    <div class="profile-status">
+      <div>
+        <strong>Rp 250.000</strong>
+        <p>Saldo</p>
+      </div>
+      <div>
+        <strong>120</strong>
+        <p>Poin</p>
+      </div>
+      <div>
+        <strong>3</strong>
+        <p>Voucher</p>
+      </div>
+    </div>
+  </div>
+  <!-- Bagian Pesanan Saya -->
+  <div class="order-section">
+    <h3>Pesanan Saya</h3>
+    <div class="order-icons">
+      <div class="order-item">
+        <div class="icon-circle">
+          <ion-icon name="card-outline"></ion-icon>
+        </div>
+        <p>Belum Bayar</p>
+      </div>
+      <div class="order-item">
+        <div class="icon-circle">
+          <ion-icon name="cube-outline"></ion-icon>
+        </div>
+        <p>Dikemas</p>
+      </div>
+      <div class="order-item">
+        <div class="icon-circle">
+          <ion-icon name="car-outline"></ion-icon>
+        </div>
+        <p>Dikirim</p>
+      </div>
+      <div class="order-item">
+        <div class="icon-circle">
+          <ion-icon name="star-outline"></ion-icon>
+        </div>
+        <p>Ulasan</p>
+      </div>
+      <div class="order-item">
+        <div class="icon-circle">
+          <ion-icon name="refresh-outline"></ion-icon>
+        </div>
+        <p>Retur</p>
+      </div>
+    </div>
+  </div>
+  <!-- Menu -->
+  <div class="menu-grid">
+    <div class="menu-item" onclick="alert('Pesanan Saya')">
+      <span>📦</span>
+      <p>Pesanan</p>
+    </div>
+    <div class="menu-item" onclick="alert('Alamat Pengiriman')">
+      <span>🏠</span>
+      <p>Alamat</p>
+    </div>
+    <div class="menu-item" onclick="alert('Voucher Saya')">
+      <span>🎟</span>
+      <p>Voucher</p>
+    </div>
+    <div class="menu-item" onclick="alert('Metode Pembayaran')">
+      <span>💳</span>
+      <p>Pembayaran</p>
+    </div>
+    <div class="menu-item" onclick="alert('Pengaturan Akun')">
+      <span>⚙️</span>
+      <p>Pengaturan</p>
+    </div>
+    <div class="menu-item" onclick="alert('Bantuan')">
+      <span>❓</span>
+      <p>Bantuan</p>
+    </div>
+  </div>
+  <div> 
+  <nav class="navbar-icons">
+     <a href="../../index.html">
+       <ion-icon name="home-outline"></ion-icon>
+     </a>
+     <a href="/pages/reward/reward.html" >
+       <ion-icon name="gift-outline"></ion-icon>
+     </a>
+     <a href="/pages/product/produk.html">
+       <ion-icon name="cart-outline"></ion-icon>
+     </a>
+     <a href="#" class="active">
+       <ion-icon name="person-outline"></ion-icon>
+     </a>
+   </nav>
+  </div>
+  <script src="/script.js" type="text/javascript"></script>
+<script type="module" src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
